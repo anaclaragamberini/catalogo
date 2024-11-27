@@ -1,19 +1,42 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo();
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
-        catalogo.adicionar();
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. Adicionar Disco");
+            System.out.println("2. Listar Discos");
+            System.out.println("3. Editar Disco");
+            System.out.println("4. Remover Disco");
+            System.out.println("5. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();  
 
-        catalogo.listar();
-
-        catalogo.editar();
-
-        System.out.println("\nApós edição:");
-        catalogo.listar();
-
-        catalogo.remover();
-
-        System.out.println("\nApós remoção:");
-        catalogo.listar();
+            switch (opcao) {
+                case 1:
+                    catalogo.adicionar();  
+                    break;
+                case 2:
+                    catalogo.listar();  
+                    break;
+                case 3:
+                    catalogo.editar();  
+                    break;
+                case 4:
+                    catalogo.remover();  
+                    break;
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+                    break;
+            }
+        } while (opcao != 5); 
     }
 }
