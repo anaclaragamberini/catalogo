@@ -2,13 +2,14 @@ import java.util.List;
 
 public class Disco {
     private String titulo;
-    private int anoLancamento;
+    private int ano;
     private List<String> faixas;
     private Artista artista;
 
-    public Disco(String titulo, int anoLancamento, List<String> faixas, Artista artista) {
+    
+    public Disco(String titulo, int ano, List<String> faixas, Artista artista) {
         this.titulo = titulo;
-        this.anoLancamento = anoLancamento;
+        this.ano = ano;
         this.faixas = faixas;
         this.artista = artista;
     }
@@ -21,21 +22,32 @@ public class Disco {
         this.titulo = titulo;
     }
 
-    public int getAnoLancamento() {
-        return anoLancamento;
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     public List<String> getFaixas() {
         return faixas;
     }
 
+    public void setFaixas(List<String> faixas) {
+        this.faixas = faixas;
+    }
+
     public Artista getArtista() {
         return artista;
     }
 
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
+
     @Override
     public String toString() {
-        return "Disco: " + titulo + " | Ano: " + anoLancamento + " | Artista: " + artista
-                + "\nFaixas: " + String.join(", ", faixas);
+        return "Disco: " + titulo + " (" + ano + ") - Artista: " + artista.getNome() + " - Faixas: " + faixas;
     }
 }
