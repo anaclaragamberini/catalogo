@@ -19,16 +19,16 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    catalogo.adicionar();  
+                    catalogo.adicionar(scanner);  
                     break;
                 case 2:
                     catalogo.listar();  
                     break;
                 case 3:
-                    catalogo.editar();  
+                    catalogo.editar(scanner);  
                     break;
                 case 4:
-                    catalogo.remover();  
+                    catalogo.remover(scanner);  
                     break;
                 case 5:
                     System.out.println("Saindo...");
